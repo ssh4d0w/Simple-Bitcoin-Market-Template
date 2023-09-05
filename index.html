@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="glass">
+            <div class="dashboard">
+                <div class="user">
+                    <img src="avatar.png" alt="">
+                    <h3>Guest</h3>
+                    <p>Guest</p>
+                    <div class="links">
+                        <div class="link">
+                            <img src="bitcoin.png" alt="">
+                            <h2>Balance</h2>
+                            <div class="About Us">
+                                <img src="buton1.png" alt="">
+                                <h2>About Us</h2>
+                                <div class="contact">
+                                    <a href="https://github.com/ssh4d0w">
+                                        <img src="contact.png"></a>
+                                    <h2>Contact Us</h2>
+                                    <div class="account">
+                                        <a href="account.html">
+                                            <img src="user.png"></a>
+                                        <h2>Account Information</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+
+
+    <!-- ethereum div -->
+    <div class="ethereum-table">
+        <h2 class="ethereum-price-heading">Ethereum Price</h2>
+        <img src="Ethereum.png" alt="Ethereum Logo" class="ethereum-logo">
+
+        <p id="ethereum-price">$0.00</p>
+    </div>
+
+    <script>
+
+        function updateEthereumPrice() {
+            fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd")
+                .then(response => response.json())
+                .then(data => {
+                    const ethereumPrice = data.ethereum.usd;
+                    document.getElementById("ethereum-price").textContent = `$${ethereumPrice.toFixed(2)}`;
+                })
+                .catch(error => console.error("error: ", error));
+        }
+
+
+        updateEthereumPrice();
+        setInterval(updateEthereumPrice, 30000); 
+    </script>
+
+
+    <!-- bitcoin div -->
+    <div class="bitcoin-table">
+        <h2>Bitcoin Price</h2>
+        <img src="bitcoin.png" alt="Bitcoin Logo" class="bitcoin-logo">
+        <p id="bitcoin-price">$0.00</p>
+    </div>
+
+
+    <script>
+        // price api and update
+        function updateBitcoinPrice() {
+            fetch("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
+                .then(response => response.json())
+                .then(data => {
+                    const bitcoinPrice = data.bitcoin.usd;
+                    document.getElementById("bitcoin-price").textContent = `$${bitcoinPrice.toFixed(2)}`;
+                })
+                .catch(error => console.error("error: ", error));
+        }
+        updateBitcoinPrice();
+        setInterval(updateBitcoinPrice, 30000); // 30000 = 30 second tries to keep it updated every 30 seconds note : you can increase it to 1 minute or higher to avoid errors due to free api
+
+    </script>
+</body>
+
+</html>

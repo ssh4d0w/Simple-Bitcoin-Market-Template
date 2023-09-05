@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+
+main {
+    min-height: 100vh;
+    background: linear-gradient(to right top, #dfb465, #8aefff); /*background color*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    z-index: 3;
+    backdrop-filter: blur(2rem);
+    display: flex;
+
+
+}
+
+.circle1,
+.circle2 {
+    background: white;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+
+}
+
+.circle1 {
+    top: 5%;
+    right: 15%;
+    border-radius: 4rem;
+    z-index: 2;
+}
+
+.circle2 {
+    bottom: 5%;
+    left: 15%;
+    border-radius: 4rem;
+    z-index: 2;
+}
+
+.dashboard {
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+
+    text-decoration: none;
+}
+
+.dashboard h2 {
+
+    font-size: 20px;
+    flex: 2px;
+    margin: 15px;
+    padding: 1rem 5ram;
+    align-items: center;
+}
+
+/* div */
+.bitcoin-table {
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    top: 18%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(to right bottom, rgba(77, 77, 77, 0.9), rgba(116, 116, 116, 0.3));
+    border-radius: 15px;
+
+    z-index: 4;
+    /*ön planda*/
+}
+
+.bitcoin-table h2 {
+    font-size: 23px;
+}
+
+.bitcoin-table p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.bitcoin-price {
+    font-size: 0px;
+    /* Yazı boyutunu ihtiyacınıza göre ayarlayın */
+}
+
+
+.ethereum-table {
+    position: absolute;
+    font-family: "Poppins", sans-serif;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: linear-gradient(to right bottom, rgba(77, 77, 77, 0.9), rgba(116, 116, 116, 0.3));
+    border-radius: 15px;
+
+    z-index: 4;
+    /*ön planda*/
+}
+
+.ethereum-table h2 {
+    font-size: 18px;
+}
+
+.ethereum-table p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ethereum-table {
+    font-size: 0px;
+    
+}
+
+
+.ethereum-logo {
+    width: 79px;
+
+    height: 78px;
+}
